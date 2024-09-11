@@ -7,15 +7,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export function CardDefault({
-  imgSrc,
-  characterName,
-  species,
-  gender,
-  origin,
-  location,
-  btnText,
-}) {
+export function CardDefault({ imgSrc, characterName, btnText, status }) {
   return (
     <Card className="mt-6 w-96">
       <CardHeader color="blue-gray" className="relative h-56">
@@ -25,11 +17,7 @@ export function CardDefault({
         <Typography variant="h5" color="blue-gray" className="mb-2">
           {characterName}
         </Typography>
-        <Typography>
-          {characterName} is an {species} {gender != "unknown" ? gender : ""}{" "}
-          {origin != "unknown" ? "from " + origin : ""}{" "}
-          {location != "unknown" ? "currently located at " + location : ""}
-        </Typography>
+        <Typography>Status: {status}</Typography>
       </CardBody>
       <CardFooter className="flex pt-0 justify-center">
         <Button>{btnText}</Button>
